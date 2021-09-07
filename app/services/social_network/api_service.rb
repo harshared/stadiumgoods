@@ -8,7 +8,7 @@ module SocialNetwork
       SOCIAL_NETWORK_LIST.each do |site, link|
         payload.merge!(individual_site_response(site, link))
       end
-      return payload
+      payload
     end
 
     private
@@ -22,10 +22,10 @@ module SocialNetwork
       statuses = []
       SOCIAL_NETWORK_LIST_ITEM.each do |item|
         data.each do |each_user|
-	  	  statuses << each_user[item] if !!(each_user[item])
-	  	end
-	  end
-	  statuses
+          statuses << each_user[item] if !!(each_user[item])
+        end
+      end
+      statuses
     end
   end
 end
